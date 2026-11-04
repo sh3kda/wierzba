@@ -10,13 +10,18 @@
             throw error;
         }
         console.warn('Nie mozna odczytac lub zapisac preferencji motywu.', error);
-        themeStatus.textContent = 'Pami\u0119\u0107 przegl\u0105darki jest niedost\u0119pna. Motyw zmieni si\u0119 tylko na tej stronie.';
-        themeStatus.hidden = false;
+        if (themeStatus) {
+            themeStatus.textContent = 'Pamiec przegladarki jest niedostepna. Motyw zmieni sie tylko na tej stronie.';
+            themeStatus.hidden = false;
+        }
     }
 
     function updateThemeLabel() {
+        if (!toggleButton) {
+            return;
+        }
         const isDark = document.body.classList.contains('dark-theme');
-        toggleButton.setAttribute('aria-label', isDark ? 'W\u0142\u0105cz jasny motyw' : 'W\u0142\u0105cz ciemny motyw');
+        toggleButton.setAttribute('aria-label', isDark ? 'Wlacz jasny motyw' : 'Wlacz ciemny motyw');
     }
 
     try {
@@ -28,21 +33,43 @@
     }
     updateThemeLabel();
 
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        updateThemeLabel();
-        try {
-            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
-        } catch (error) {
-            reportStorageError(error);
-        }
-    });
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            updateThemeLabel();
+            try {
+                localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+            } catch (error) {
+                reportStorageError(error);
+            }
+        });
+    }
 
-    document.getElementById('last-modified').textContent = document.lastModified;
+    function formatDateTimePl(value) {
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+            return value;
+        }
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = String(date.getFullYear());
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+    }
+
+    const lastModifiedElement = document.getElementById('last-modified');
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = formatDateTimePl(document.lastModified);
+    }
 
     const filterInput = document.getElementById('dir-filter');
     const entries = Array.from(document.querySelectorAll('#dir-list [data-entry]'));
     const emptyState = document.getElementById('empty-state');
+    if (!filterInput || !emptyState) {
+        return;
+    }
     const searchableEntries = entries.map(element => ({
         element,
         text: `${element.querySelector('.entry-name').textContent} ${element.dataset.keywords || ''}`
