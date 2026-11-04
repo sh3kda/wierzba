@@ -1,0 +1,1 @@
+print ('Coś tu wykombinujemy')
