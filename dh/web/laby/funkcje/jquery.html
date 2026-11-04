@@ -6,24 +6,41 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0;
+            padding: 1.5rem;
+            font-family: Arial, sans-serif;
+            background: #0f1117;
+            color: #e8ecf3;
+        }
+
         #naglowek1 {
             padding: 10px;
+            border-radius: 8px;
         }
+
         #akapit1 {
             padding: 10px;
+            border-radius: 8px;
+            background: #1a2334;
+            display: inline-block;
         }
     </style>
 
     <script>
         $(document).ready(function () {
             $('#naglowek1')
-                .css({ background: 'yellow' })
+                .css({ background: '#314666' })
                 .delay(1500)                                
                 .fadeOut(1500) 
                 .fadeIn(1500);             
 
             $('p#akapit1').click(function () {
-                $(this).css({ background: 'red' });
+                $(this).css({ background: '#5a2a33' });
             });
 
         });

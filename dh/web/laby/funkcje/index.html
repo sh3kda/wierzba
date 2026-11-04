@@ -6,26 +6,27 @@
     <title>Zadanie JS</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        console.log("Uszanowanie dla Państwa");
-        function zmienKolorCzcionki () {
-            document.body.style.color = "black";
-        }
-        function zmienKolorTla () {
-            document.body.style.backgroundColor = "white";
-        }
-        function klikamprzycisk () {
-            alert("Kliknąłeś przycisk");
-        }
-        function zmienNaglowek () {
-            document.title = "Nowy nagłówek";
-        }
-        documentGetElementById("duzy tekst").style.fontSize = "100px";
+        console.log("Uszanowanie dla Panstwa");
 
-        function wiekszyTekst () {
+        function zmienKolorCzcionki() {
+            document.body.style.color = "#f3f6ff";
+        }
+
+        function zmienKolorTla() {
+            document.body.style.backgroundColor = "#0f1117";
+        }
+
+        function klikamPrzycisk() {
+            alert("Kliknales przycisk");
+        }
+
+        function zmienNaglowek() {
+            document.title = "Nowy naglowek";
+        }
+
+        function wiekszyTekst() {
             document.getElementById("duzy tekst").style.fontSize = "110px";
         }
-
-
     </script>
 </head>
 <body>
@@ -33,7 +34,7 @@
     <button onclick="wiekszyTekst()">zwieksz tekst do 110px</button>
     <p onmouseover="zmienKolorCzcionki ()">Tekst</p>
     <p onmouseout="zmienKolorTla ()">Tekst2</p>
-    <button onclick="klikamprzycisk ()"> PRZYCISK</button>
+    <button onclick="klikamPrzycisk()"> PRZYCISK</button>
     <br>
     <button onclick="console.log('Kliknąłeś przycisk 2')"> W konsoli powiadamiamiam o kliknieciu przycisku</button>
     <br>

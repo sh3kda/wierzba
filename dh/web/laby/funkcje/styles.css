@@ -1,6 +1,17 @@
-body{
-    color: #efe126;
-    background-color: #4B4E53;
+body {
+    margin: 0;
+    color: #f2f6ff;
+    background-color: #0f1117;
     text-align: center;
-    font-size: 50px;
+    font-family: Arial, sans-serif;
+    font-size: clamp(1.2rem, 4vw, 2.8rem);
+    line-height: 1.4;
+}
+
+button {
+    background: #1d2535;
+    color: #eaf0ff;
+    border: 1px solid #3a4460;
+    border-radius: 10px;
+    padding: 0.5rem 0.9rem;
 }
