@@ -6,12 +6,6 @@
     <title>Plac zabaw JavaScript</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        const KOLORY = {
-            tloDomyslne: "#0f1117",
-            tloAkcent: "#171f2d",
-            tekstDomyslny: "#f2f6ff"
-        };
-
         function formatujDateDzienMiesiacRok(data) {
             const dzien = String(data.getDate()).padStart(2, "0");
             const miesiac = String(data.getMonth() + 1).padStart(2, "0");
@@ -35,14 +29,20 @@
         }
 
         function ustawCiemnyAkcent() {
-            document.body.style.backgroundColor = KOLORY.tloAkcent;
+            document.body.classList.remove("theme-neon");
+            document.body.classList.add("theme-accent");
             document.getElementById("status-akcji").textContent = "Ustawiono ciemniejsze tlo akcentowe.";
         }
 
         function przywrocTlo() {
-            document.body.style.backgroundColor = KOLORY.tloDomyslne;
-            document.body.style.color = KOLORY.tekstDomyslny;
+            document.body.classList.remove("theme-accent", "theme-neon");
             document.getElementById("status-akcji").textContent = "Przywrocono domyslne tlo i kolor tekstu.";
+        }
+
+        function wlaczTrybNeonowy() {
+            document.body.classList.remove("theme-accent");
+            document.body.classList.add("theme-neon");
+            document.getElementById("status-akcji").textContent = "Wlaczono tryb neonowy: czarne tlo i neonowy tekst.";
         }
 
         function pokazAlert() {
@@ -57,7 +57,6 @@
         function pokazDate() {
             const dzisiaj = formatujDateDzienMiesiacRok(new Date());
             document.getElementById("dzisiejsza-data").textContent = dzisiaj;
-            document.getElementById("status-akcji").textContent = "Wyswietlono date w formacie dzien-miesiac-rok.";
         }
 
         function podkreslSekcje(opis) {
@@ -67,8 +66,8 @@
 </head>
 <body>
     <main class="playground">
-        <h1 id="duzy-tekst">Plac zabaw JavaScript</h1>
-        <p class="subtitle">Kazdy przycisk opisuje dokladnie, co robi.</p>
+        <h1 id="duzy-tekst">Plac zabaw JS</h1>
+        <p class="subtitle">Domyslnie: ciemne tlo i jasny tekst. Po kliknieciu mozesz wlaczyc tryb neonowy.</p>
 
         <section class="panel" onmouseover="podkreslSekcje('Sekcja zmiany wygladu: tlo i naglowek.')">
             <h2>Zmiana wygladu</h2>
@@ -76,6 +75,7 @@
                 <button type="button" onclick="zwiekszNaglowek()">Powieksz naglowek</button>
                 <button type="button" onclick="przywrocNaglowek()">Przywroc rozmiar naglowka</button>
                 <button type="button" onclick="ustawCiemnyAkcent()">Ustaw ciemniejsze tlo</button>
+                <button type="button" onclick="wlaczTrybNeonowy()">Wlacz tryb neonowy</button>
                 <button type="button" onclick="przywrocTlo()">Przywroc domyslne tlo</button>
                 <button type="button" onclick="ustawTytulKarty()">Zmien tytul karty przegladarki</button>
             </div>

@@ -15,7 +15,13 @@
             padding: 1.5rem;
             font-family: Arial, sans-serif;
             background: #0f1117;
-            color: #e8ecf3;
+            color: #ffffff;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        body.neon {
+            background: #020202;
+            color: #77ff88;
         }
 
         #naglowek1 {
@@ -28,6 +34,7 @@
             border-radius: 8px;
             background: #1a2334;
             display: inline-block;
+            cursor: pointer;
         }
     </style>
 
@@ -47,7 +54,8 @@
                 .fadeIn(1500);
 
             $('p#akapit1').click(function () {
-                $(this).css({ background: '#5a2a33' });
+                $('body').addClass('neon');
+                $(this).css({ background: '#0a0a0a', border: '1px solid #2eff55' });
             });
 
             $('#dzisiejsza-data').text(formatujDateDzienMiesiacRok(new Date()));
@@ -60,7 +68,7 @@
 
     <hr>
 
-    <p id="akapit1">Kliknij, aby zmienic kolor tla tego akapitu</p>
+    <p id="akapit1">Kliknij, aby wlaczyc czarne tlo i neonowy tekst</p>
     <p>Dzisiejsza data (dd-mm-rrrr): <strong id="dzisiejsza-data">--</strong></p>
 
 </body>

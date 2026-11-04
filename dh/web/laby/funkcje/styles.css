@@ -5,8 +5,10 @@
     --bg-button: #1d2535;
     --bg-button-hover: #27344b;
     --border: #3a4561;
-    --text-main: #f2f6ff;
+    --text-main: #ffffff;
     --text-muted: #b6c0d9;
+    --neon-text: #77ff88;
+    --neon-border: #2eff55;
 }
 
 body {
@@ -16,6 +18,38 @@ body {
     background-color: var(--bg-main);
     font-family: Arial, sans-serif;
     line-height: 1.5;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.theme-accent {
+    background-color: #171f2d;
+}
+
+body.theme-neon {
+    background-color: #020202;
+    color: var(--neon-text);
+}
+
+body.theme-neon .panel {
+    background: #0a0a0a;
+    border-color: var(--neon-border);
+}
+
+body.theme-neon button {
+    background: #070707;
+    color: var(--neon-text);
+    border-color: var(--neon-border);
+}
+
+body.theme-neon button:hover,
+body.theme-neon button:focus-visible {
+    background: #101010;
+}
+
+body.theme-neon .subtitle,
+body.theme-neon .hint,
+body.theme-neon .status {
+    color: #b3ffbf;
 }
 
 .playground {
