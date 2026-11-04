@@ -32,27 +32,36 @@
     </style>
 
     <script>
+        function formatujDateDzienMiesiacRok(data) {
+            const dzien = String(data.getDate()).padStart(2, '0');
+            const miesiac = String(data.getMonth() + 1).padStart(2, '0');
+            const rok = String(data.getFullYear());
+            return `${dzien}-${miesiac}-${rok}`;
+        }
+
         $(document).ready(function () {
             $('#naglowek1')
                 .css({ background: '#314666' })
-                .delay(1500)                                
+                .delay(1500)
                 .fadeOut(1500) 
-                .fadeIn(1500);             
+                .fadeIn(1500);
 
             $('p#akapit1').click(function () {
                 $(this).css({ background: '#5a2a33' });
             });
 
+            $('#dzisiejsza-data').text(formatujDateDzienMiesiacRok(new Date()));
         });
     </script>
 </head>
 <body>
 
-    <h1 id="naglowek1">Naglowek nr 1</h1>
+    <h1 id="naglowek1">Animacja naglowka po zaladowaniu strony</h1>
 
     <hr>
 
-    <p id="akapit1">Zmien kolor tla</p>
+    <p id="akapit1">Kliknij, aby zmienic kolor tla tego akapitu</p>
+    <p>Dzisiejsza data (dd-mm-rrrr): <strong id="dzisiejsza-data">--</strong></p>
 
 </body>
 </html>

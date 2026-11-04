@@ -3,42 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zadanie JS</title>
+    <title>Plac zabaw JavaScript</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        console.log("Uszanowanie dla Panstwa");
+        const KOLORY = {
+            tloDomyslne: "#0f1117",
+            tloAkcent: "#171f2d",
+            tekstDomyslny: "#f2f6ff"
+        };
 
-        function zmienKolorCzcionki() {
-            document.body.style.color = "#f3f6ff";
+        function formatujDateDzienMiesiacRok(data) {
+            const dzien = String(data.getDate()).padStart(2, "0");
+            const miesiac = String(data.getMonth() + 1).padStart(2, "0");
+            const rok = String(data.getFullYear());
+            return `${dzien}-${miesiac}-${rok}`;
         }
 
-        function zmienKolorTla() {
-            document.body.style.backgroundColor = "#0f1117";
+        function ustawTytulKarty() {
+            document.title = "Plac zabaw JavaScript - aktywny";
+            document.getElementById("status-akcji").textContent = "Zmieniono tytul karty przegladarki.";
         }
 
-        function klikamPrzycisk() {
-            alert("Kliknales przycisk");
+        function zwiekszNaglowek() {
+            document.getElementById("duzy-tekst").style.fontSize = "3.2rem";
+            document.getElementById("status-akcji").textContent = "Powiekszono naglowek strony.";
         }
 
-        function zmienNaglowek() {
-            document.title = "Nowy naglowek";
+        function przywrocNaglowek() {
+            document.getElementById("duzy-tekst").style.fontSize = "2.2rem";
+            document.getElementById("status-akcji").textContent = "Przywrocono domyslny rozmiar naglowka.";
         }
 
-        function wiekszyTekst() {
-            document.getElementById("duzy tekst").style.fontSize = "110px";
+        function ustawCiemnyAkcent() {
+            document.body.style.backgroundColor = KOLORY.tloAkcent;
+            document.getElementById("status-akcji").textContent = "Ustawiono ciemniejsze tlo akcentowe.";
+        }
+
+        function przywrocTlo() {
+            document.body.style.backgroundColor = KOLORY.tloDomyslne;
+            document.body.style.color = KOLORY.tekstDomyslny;
+            document.getElementById("status-akcji").textContent = "Przywrocono domyslne tlo i kolor tekstu.";
+        }
+
+        function pokazAlert() {
+            alert("To jest przykladowy alert z laboratorium JS.");
+        }
+
+        function wpiszDoKonsoli() {
+            console.log("[funkcje] Uzytkownik uruchomil akcje testowa.");
+            document.getElementById("status-akcji").textContent = "Wyslano komunikat do konsoli.";
+        }
+
+        function pokazDate() {
+            const dzisiaj = formatujDateDzienMiesiacRok(new Date());
+            document.getElementById("dzisiejsza-data").textContent = dzisiaj;
+            document.getElementById("status-akcji").textContent = "Wyswietlono date w formacie dzien-miesiac-rok.";
+        }
+
+        function podkreslSekcje(opis) {
+            document.getElementById("podpowiedz").textContent = opis;
         }
     </script>
 </head>
 <body>
-    <h1 id="duzy tekst"> duzy tekst</h1>
-    <button onclick="wiekszyTekst()">zwieksz tekst do 110px</button>
-    <p onmouseover="zmienKolorCzcionki ()">Tekst</p>
-    <p onmouseout="zmienKolorTla ()">Tekst2</p>
-    <button onclick="klikamPrzycisk()"> PRZYCISK</button>
-    <br>
-    <button onclick="console.log('Kliknąłeś przycisk 2')"> W konsoli powiadamiamiam o kliknieciu przycisku</button>
-    <br>
-    <button onclick="zmienNaglowek()">Zmien nagłówek</button>
-    <p onmouseover="this.innerHTML=Date ()"> data </p>
+    <main class="playground">
+        <h1 id="duzy-tekst">Plac zabaw JavaScript</h1>
+        <p class="subtitle">Kazdy przycisk opisuje dokladnie, co robi.</p>
+
+        <section class="panel" onmouseover="podkreslSekcje('Sekcja zmiany wygladu: tlo i naglowek.')">
+            <h2>Zmiana wygladu</h2>
+            <div class="actions">
+                <button type="button" onclick="zwiekszNaglowek()">Powieksz naglowek</button>
+                <button type="button" onclick="przywrocNaglowek()">Przywroc rozmiar naglowka</button>
+                <button type="button" onclick="ustawCiemnyAkcent()">Ustaw ciemniejsze tlo</button>
+                <button type="button" onclick="przywrocTlo()">Przywroc domyslne tlo</button>
+                <button type="button" onclick="ustawTytulKarty()">Zmien tytul karty przegladarki</button>
+            </div>
+        </section>
+
+        <section class="panel" onmouseover="podkreslSekcje('Sekcja akcji: alert, konsola i data.')">
+            <h2>Akcje i informacje</h2>
+            <div class="actions">
+                <button type="button" onclick="pokazAlert()">Pokaz alert</button>
+                <button type="button" onclick="wpiszDoKonsoli()">Wyslij komunikat do konsoli</button>
+                <button type="button" onclick="pokazDate()">Pokaz dzisiejsza date</button>
+            </div>
+            <p>Dzisiejsza data: <strong id="dzisiejsza-data">--</strong></p>
+        </section>
+
+        <p id="podpowiedz" class="hint">Najedz na sekcje, aby zobaczyc podpowiedz.</p>
+        <p id="status-akcji" class="status">Gotowe do testow.</p>
+    </main>
 </body>
 </html>

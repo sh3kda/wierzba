@@ -1,17 +1,76 @@
+:root {
+    color-scheme: dark;
+    --bg-main: #0f1117;
+    --bg-panel: #151d2b;
+    --bg-button: #1d2535;
+    --bg-button-hover: #27344b;
+    --border: #3a4561;
+    --text-main: #f2f6ff;
+    --text-muted: #b6c0d9;
+}
+
 body {
     margin: 0;
-    color: #f2f6ff;
-    background-color: #0f1117;
-    text-align: center;
+    min-height: 100vh;
+    color: var(--text-main);
+    background-color: var(--bg-main);
     font-family: Arial, sans-serif;
-    font-size: clamp(1.2rem, 4vw, 2.8rem);
-    line-height: 1.4;
+    line-height: 1.5;
+}
+
+.playground {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    margin: 0 0 1.5rem;
+    color: var(--text-muted);
+}
+
+.panel {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-panel);
+}
+
+.panel h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
 }
 
 button {
-    background: #1d2535;
-    color: #eaf0ff;
-    border: 1px solid #3a4460;
+    background: var(--bg-button);
+    color: var(--text-main);
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 0.5rem 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover,
+button:focus-visible {
+    background: var(--bg-button-hover);
+}
+
+.hint,
+.status {
+    margin: 0.4rem 0;
+    color: var(--text-muted);
 }
