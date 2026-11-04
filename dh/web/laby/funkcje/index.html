@@ -19,13 +19,19 @@
         }
 
         function zwiekszNaglowek() {
-            document.getElementById("duzy-tekst").style.fontSize = "3.2rem";
-            document.getElementById("status-akcji").textContent = "Powiekszono naglowek strony.";
+            const naglowek = document.getElementById("duzy-tekst");
+            const aktualnyRozmiar = parseFloat(getComputedStyle(naglowek).fontSize);
+            const nowyRozmiar = aktualnyRozmiar + 6;
+            naglowek.style.fontSize = `${nowyRozmiar}px`;
+            document.getElementById("status-akcji").textContent = `Powiekszono naglowek do ${Math.round(nowyRozmiar)} px.`;
         }
 
-        function przywrocNaglowek() {
-            document.getElementById("duzy-tekst").style.fontSize = "2.2rem";
-            document.getElementById("status-akcji").textContent = "Przywrocono domyslny rozmiar naglowka.";
+        function zmniejszNaglowek() {
+            const naglowek = document.getElementById("duzy-tekst");
+            const aktualnyRozmiar = parseFloat(getComputedStyle(naglowek).fontSize);
+            const nowyRozmiar = aktualnyRozmiar - 6;
+            naglowek.style.fontSize = `${nowyRozmiar}px`;
+            document.getElementById("status-akcji").textContent = `Zmniejszono naglowek do ${Math.round(nowyRozmiar)} px.`;
         }
 
         function ustawCiemnyAkcent() {
@@ -73,7 +79,7 @@
             <h2>Zmiana wygladu</h2>
             <div class="actions">
                 <button type="button" onclick="zwiekszNaglowek()">Powieksz naglowek</button>
-                <button type="button" onclick="przywrocNaglowek()">Przywroc rozmiar naglowka</button>
+                <button type="button" onclick="zmniejszNaglowek()">Zmniejsz naglowek</button>
                 <button type="button" onclick="ustawCiemnyAkcent()">Ustaw ciemniejsze tlo</button>
                 <button type="button" onclick="wlaczTrybNeonowy()">Wlacz tryb neonowy</button>
                 <button type="button" onclick="przywrocTlo()">Przywroc domyslne tlo</button>
