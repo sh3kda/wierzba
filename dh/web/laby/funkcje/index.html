@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie JS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        console.log("Uszanowanie dla Państwa");
+        function zmienKolorCzcionki () {
+            document.body.style.color = "black";
+        }
+        function zmienKolorTla () {
+            document.body.style.backgroundColor = "white";
+        }
+        function klikamprzycisk () {
+            alert("Kliknąłeś przycisk");
+        }
+        function zmienNaglowek () {
+            document.title = "Nowy nagłówek";
+        }
+        documentGetElementById("duzy tekst").style.fontSize = "100px";
+
+        function wiekszyTekst () {
+            document.getElementById("duzy tekst").style.fontSize = "110px";
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1 id="duzy tekst"> duzy tekst</h1>
+    <button onclick="wiekszyTekst()">zwieksz tekst do 110px</button>
+    <p onmouseover="zmienKolorCzcionki ()">Tekst</p>
+    <p onmouseout="zmienKolorTla ()">Tekst2</p>
+    <button onclick="klikamprzycisk ()"> PRZYCISK</button>
+    <br>
+    <button onclick="console.log('Kliknąłeś przycisk 2')"> W konsoli powiadamiamiam o kliknieciu przycisku</button>
+    <br>
+    <button onclick="zmienNaglowek()">Zmien nagłówek</button>
+    <p onmouseover="this.innerHTML=Date ()"> data </p>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Shared host: these rules must be merged into the hostname's /robots.txt.
+# A robots.txt inside /~25_dawid/ is not authoritative.
+User-agent: *
+Disallow: /~25_dawid/

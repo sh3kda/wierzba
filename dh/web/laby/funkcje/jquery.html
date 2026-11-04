@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery przykłady</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #naglowek1 {
+            padding: 10px;
+        }
+        #akapit1 {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#naglowek1')
+                .css({ background: 'yellow' })
+                .delay(1500)                                
+                .fadeOut(1500) 
+                .fadeIn(1500);             
+
+            $('p#akapit1').click(function () {
+                $(this).css({ background: 'red' });
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+    <h1 id="naglowek1">Naglowek nr 1</h1>
+
+    <hr>
+
+    <p id="akapit1">Zmien kolor tla</p>
+
+</body>
+</html>

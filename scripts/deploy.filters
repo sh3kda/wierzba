@@ -1,0 +1,28 @@
+# Only these obsolete paths may be deleted on the receiver.
+R /dh/
+R /dh/web/
+R /dh/projekty/
+R /dh/projekty/portfolio.html
+R /dh/list.php
+R /dh/index.php
+R /dh/README.md
+R /dh/scripts/reindex.sh
+R /dh/scripts/test-indexing.test.cjs
+R /dh/scripts/
+R /dh/bin/gen-index
+R /dh/bin/
+R /.DS_Store
+R /dh/.DS_Store
+R /dh/web/.DS_Store
+# Preserve all other receiver-only files, including coursework and .noindex.
+P *
+# Do not upload local tooling metadata.
+- .vscode/
+- .git/
+- .DS_Store
+- .env
+- .env.*
+- *.pem
+- *.key
+- *.p12
+- *.pfx

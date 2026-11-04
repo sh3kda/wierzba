@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pielęgniarka Bożena Kowalska</title>
+  <meta name="description" content="Profesjonalna opieka pielęgniarska w domu pacjenta. Malbork i okolice." />
+  
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js" defer></script>
+   
+ </head>
+
+<body id="top">
+
+  <nav class="nawigacja">
+    <div class="nawigacjaSrodek">
+      <a class="logo" href="#start">Bożena Kowalska</a>
+
+      <div class="menuLista">
+        <a class="menuLink" href="#start">Start</a>
+        <a class="menuLink" href="#omnie">O mnie</a>
+        <a class="menuLink" href="#uslugi">Usługi</a>
+        <a class="menuLink" href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="start" class="sekcja sekcjaPowitalna">
+    <div class="tloSekcji"></div>
+    <div class="kontener">
+      <span class="nadtytul hero">Usługi pielęgniarskie • Malbork</span>
+      <h1 class="tytulGlowny animacjaWejscia">Opieka z sercem w Twoim domu</h1>
+      <p class="tekstWstepny animacjaWejscia">
+        Zapewniam profesjonalne zabiegi pielęgniarskie w domu pacjenta.
+      <br>
+       Moim celem jest opieka pielęgniarska, a także wsparcie emocjonalne pacjenta i jego rodziny. 
+      </p>
+
+      <div class="akcje animacjaWejscia">
+        <a class="przycisk przyciskGlowny" href="#kontakt">Kontakt</a>
+        <a class="przycisk przyciskPusty" href="#uslugi">Usługi</a>
+      </div>
+    </div>
+    
+    <div class="przewinWDol">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+  </header>
+
+  <section id="omnie" class="sekcja sekcjaOmnie">
+    <div class="kontener">
+      <div class="ukladOmnie">
+        
+        <div class="animacjaWejscia">
+          <div class="kartaOmnie">
+            <span class="nadtytul">Poznajmy się</span>
+            <h2 class="podtytul">O mnie</h2>
+            <p class="wstepOmnie">
+             Nazywam się Bożena Kowalska. Jestem pielęgniarką z ponad 25-letnim stażem, specjalizującą się w opiece paliatywnej.
+             Moja praca to połączenie medycznego profesjonalizmu z głębokim szacunkiem do drugiego człowieka. Doświadczenie zdobywane zarówno przy łóżku pacjenta w domu, jak i na oddziałach, nauczyło mnie, jak ważne jest poczucie bezpieczeństwa – nie tylko dla chorych, ale i ich rodzin.
+             W codziennej pracy inspiruję się postawą św. Matki Teresy z Kalkuty, realizując misję towarzyszenia w cierpieniu z godnością i miłością.
+
+            <h3 class="naglowekMaly">Doświadczenie</h3>
+            <ul class="listaKariery">
+              <li><strong>Pielęgniarka Hospicyjna | Hospicjum domowe</strong> <span>Sprawowanie specjalistycznej opieki pielęgniarskiej nad pacjentami w warunkach domowych.</span></li>
+              <li><strong>Pielęgniarka Oddziałowa | Hospicjum stacjonarne</strong> <span>Zarządzanie personelem pielęgniarskim i organizacja pracy oddziału</span></li>
+              <li><strong>Pielęgniarka | Oddział Kardiologii </strong> <span>Opieka nad pacjentami z chorobami serca i układu krążenia, a także po zabiegach kardiologicznych.</span></li>
+              <li><strong>Wykładowca | Uniwersytet</strong> <span>Prowadząca zajęcia i wykłady praktyczne.</span></li>
+            </ul>
+
+            <div class="cytatMotto">
+              <span>♥</span>
+              <span>"Dusza musi być złota." — bł. Hanna Chrzanowska</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ukladOmniePrawa animacjaWejscia">
+          <div class="zdjecieProfilowe"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="uslugi" class="sekcja sekcjaUslugi">
+    <div class="kontener uslugiKontener">
+      <header class="naglowekUslug animacjaWejscia">
+        <span class="nadtytulUslug">Oferta</span>
+        <h2 class="podtytul" style="color:#fff">Zakres usług</h2>
+        <div class="wskazowka">Wybierz zabieg z listy, aby zobaczyć szczegóły</div>
+      </header>
+
+      <div class="ukladUslug animacjaWejscia">
+        
+        <div class="listaZabiegow">
+          <button class="kartaZabiegu aktywny" data-target="u1">
+            <span class="numerZabiegu">01</span> <span class="nazwaZabiegu">Leczenie ran</span>
+          </button>
+          <button class="kartaZabiegu" data-target="u2">
+            <span class="numerZabiegu">02</span> <span class="nazwaZabiegu">Cewnikowanie</span>
+          </button>
+          <button class="kartaZabiegu" data-target="u3">
+            <span class="numerZabiegu">03</span> <span class="nazwaZabiegu">Kroplówki</span>
+          </button>
+          <button class="kartaZabiegu" data-target="u4">
+            <span class="numerZabiegu">04</span> <span class="nazwaZabiegu">Pobieranie krwi</span>
+          </button>
+          <button class="kartaZabiegu" data-target="u5">
+            <span class="numerZabiegu">05</span> <span class="nazwaZabiegu">Usuwanie szwów</span>
+          </button>
+          <button class="kartaZabiegu" data-target="u6">
+            <span class="numerZabiegu">06</span> <span class="nazwaZabiegu">Iniekcje</span>
+          </button>
+          <button class="kartaZabiegu" data-target="u7">
+            <span class="numerZabiegu">07</span> <span class="nazwaZabiegu">Port naczyniowy</span>
+          </button>
+           <button class="kartaZabiegu" data-target="u8">
+            <span class="numerZabiegu">08</span> <span class="nazwaZabiegu">Szkolenie personelu</span>
+          </button>
+        </div>
+
+        <div class="nawigacjaMobilna">
+            <button id="prevUsluga" class="strzalkaNav" aria-label="Poprzednia usługa">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            
+            <div class="aktualnaUslugaInfo">
+              <span id="mobileNumer">01</span>
+              <span id="mobileTytul">Leczenie ran</span>
+            </div>
+          
+            <button id="nextUsluga" class="strzalkaNav" aria-label="Następna usługa">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+
+        <div class="opisZabieguKontener">
+          
+          <div id="u1" class="panelOpisu aktywny">
+            <h3 class="tytulOpisu">Leczenie ran</h3>
+            <p class="tekstOpisu">Profesjonalna ocena stanu rany, dobór specjalistycznych opatrunków oraz edukacja w zakresie pielęgnacji.</p>
+          </div>
+
+          <div id="u2" class="panelOpisu">
+            <h3 class="tytulOpisu">Cewnikowanie pęcherza</h3>
+            <p class="tekstOpisu">Wymiana lub założenie cewnika Foley'a u kobiet i mężczyzn w warunkach domowych z zachowaniem pełnej sterylności i dbałości o komfort pacjenta.</p>
+          </div>
+
+          <div id="u3" class="panelOpisu">
+            <h3 class="tytulOpisu">Podłączanie kroplówek</h3>
+            <p class="tekstOpisu">Wlewy dożylne (nawadniające, z lekami) zgodnie ze zleceniem lekarskim.</p>
+          </div>
+
+          <div id="u4" class="panelOpisu">
+            <h3 class="tytulOpisu">Pobieranie krwi</h3>
+            <p class="tekstOpisu">Pobranie materiału do badań laboratoryjnych bez konieczności wychodzenia z domu. Wyniki dostępne online lub dostarczane papierowo.</p>
+          </div>
+
+          <div id="u5" class="panelOpisu">
+            <h3 class="tytulOpisu">Usuwanie szwów</h3>
+            <p class="tekstOpisu">Fachowe i bezpieczne zdjęcie szwów lub klamer po zabiegach operacyjnych, po wygojeniu rany.</p>
+          </div>
+
+          <div id="u6" class="panelOpisu">
+            <h3 class="tytulOpisu">Iniekcje</h3>
+            <p class="tekstOpisu">Wykonywanie zastrzyków domięśniowych, podskórnych oraz dożylnych zgodnie z zaleceniami lekarskimi (antybiotyki, leki przeciwbólowe, witaminy).</p>
+          </div>
+
+          <div id="u7" class="panelOpisu">
+            <h3 class="tytulOpisu">Port naczyniowy</h3>
+            <p class="tekstOpisu">Profesjonalna obsługa portów naczyniowych: zakładanie igły Hubera, płukanie, podawanie leków i pobieranie krwi.</p>
+          </div>
+
+          <div id="u8" class="panelOpisu">
+            <h3 class="tytulOpisu">Szkolenie personelu</h3>
+            <p class="tekstOpisu">Szkolenie z zakresu opieki paliatywnej i pielęgniarstwa dla personelu medycznego.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="sekcja sekcjaKontakt">
+    <div class="kontener kontaktKontener">
+      
+      <div class="kontaktNaglowek">
+        <span class="nadtytul animacjaWejscia" style="color:var(--kolorSzalwia)">Ustalmy szczegóły</span>
+        <h2 class="podtytul animacjaWejscia">Kontakt</h2>
+      </div>
+
+      <div class="ukladKontaktowy animacjaWejscia">
+        
+        <form id="formularzKontaktowy" class="formularz">
+          <h3 class="formularzTytul">Napisz wiadomość</h3>
+          <div class="wierszFormularza">
+            <label class="poleFormularza">
+              <span>Imię i nazwisko</span>
+              <input type="text" id="poleImie" name="imie" required placeholder="Jan Kowalski">
+               <small class="bladPola"></small>
+            </label>
+            <label class="poleFormularza">
+              <span>E-mail</span>
+              <input type="email" id="poleKontakt" name="email" required placeholder="twoja@poczta.com">
+              <small class="bladPola"></small>
+            </label>
+          </div>
+          <label class="poleFormularza">
+            <span>Treść wiadomości</span>
+            <textarea id="poleWiadomosc" name="wiadomosc" rows="6" required placeholder="Krótko opisz w czym mogę pomóc."></textarea>
+            <small class="bladPola"></small>
+          </label>
+            <button type="submit" class="przycisk przyciskGlowny" style="width:100%">Wyślij</button>
+            <p class="zgodaPolityka"> Wysyłając wiadomość, akceptujesz <a href="politykaprywatnosci.html">politykę prywatności</a>.
+          </p>
+
+          <p class="statusWysylki" id="statusFormularza"></p>
+        </form>
+
+        <div class="kontaktDane">
+          <div class="kartaKontaktowa">
+             <h3>E-mail</h3>
+             <p>Preferowana forma kontaktu.</p>
+             <a href="mailto:bozenakowalska@gmail.com" class="linkKontaktowy">bozenakowalska@gmail.com</a>
+          </div>
+          
+          <div class="kartaKontaktowa">
+             <h3>Telefon</h3>
+             <p>W pilnych sprawach.</p>
+             <a href="tel:+48123456789" class="linkKontaktowy maly">+48 123 456 789</a>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="stopkaKontaktu">
+        <p>© <span id="rok">2025</span> Bożena Kowalska • <a href="politykaprywatnosci.html">Polityka prywatności</a></p>
+      </footer>
+    </div>
+  </section>
+
+  <div class="pasekMobilny">
+    <a href="#kontakt" class="akcjaMobilna">Napisz wiadomość</a>
+  </div>
+
+</body>
+</html>

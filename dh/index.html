@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <title>~25_dawid/dh/</title>
+    <link rel="author" type="text/plain" href="../humans.txt">
+    <link rel="icon" type="image/svg+xml" href="https://wierzba.wzks.uj.edu.pl/~25_dawid/dh/web/media/UJ_favicon.svg">
+    <link rel="stylesheet" href="./web/media/index.css">
+    <script src="./web/media/index.js" defer></script>
+</head>
+<body class="dark-theme">
+    <nav class="breadcrumbs" aria-label="Nawigacja">
+        <a href="../" aria-label="Katalog nadrzędny">../</a>
+        <span aria-current="page">~25_dawid/dh/</span>
+    </nav>
+    <header>
+        <div>
+            <h1>~25_dawid/dh/</h1>
+            <p class="profile-name">Franciszek Dawid</p>
+            <p>Student Elektronicznego Przetwarzania Informacji (EPI)</p>
+        </div>
+        <button id="theme-toggle" type="button" aria-label="Włącz jasny motyw">
+            <span class="theme-mode mode-sun" aria-hidden="true">
+                <svg class="theme-icon" viewBox="0 0 24 24" focusable="false">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <path d="M12 1v2m0 18v2M1 12h2m18 0h2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                </svg>
+                <span>dzień</span>
+            </span>
+            <span class="theme-mode mode-moon" aria-hidden="true">
+                <svg class="theme-icon" viewBox="0 0 24 24" focusable="false">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span>noc</span>
+            </span>
+        </button>
+    </header>
+    <p id="theme-status" class="status-notice" role="status" hidden></p>
+    <main>
+        <section>
+            <h2>Cześć!</h2>
+            <p>Witaj na mojej studenckiej przestrzeni na serwerze uczelnianym 'Wierzba'. Strona służy jako repozytorium projektów laboratoryjnych oraz materiałów realizowanych w toku studiów.</p>
+        </section>
+        <section>
+            <h2>Pliki i katalogi</h2>
+            <div class="filter-container">
+                <label for="dir-filter">Filtruj zawartość</label>
+                <input type="search" id="dir-filter" placeholder="Nazwa pliku lub katalogu..." autocomplete="off" aria-controls="dir-list">
+            </div>
+            <ul class="dir-list" id="dir-list">
+                <li class="dir-item parent-entry"><a class="entry-name is-folder" href="../"><strong>../</strong></a></li>
+                <!-- DYNAMIC_LINKS_START -->
+            <li class="dir-item" data-entry><a class="entry-name is-folder" href="./algorytmy/"><strong>algorytmy/</strong></a></li>
+            <li class="dir-item" data-entry><a class="entry-name is-folder" href="./bazy-danych/"><strong>bazy-danych/</strong></a></li>
+            <li class="dir-item" data-entry><a class="entry-name is-folder" href="./grafika/"><strong>grafika/</strong></a></li>
+            <li class="dir-item" data-entry><a class="entry-name is-folder" href="./projekty/"><strong>projekty/</strong></a></li>
+            <li class="dir-item" data-entry><a class="entry-name is-folder" href="./sys-op/"><strong>sys-op/</strong></a></li>
+            <li class="dir-item" data-entry><a class="entry-name is-folder" href="./web/"><strong>web/</strong></a></li>
+                <!-- DYNAMIC_LINKS_END -->
+            </ul>
+            <p id="empty-state" class="status-notice" role="status" hidden>(brak pasujących elementów)</p>
+            <noscript>Lista jest statyczna. Filtr i zmiana motywu wymagają JavaScript.</noscript>
+        </section>
+        <section>
+            <h2>Kontakt</h2>
+            <p>Poczta uczelniana: <a href="mailto:franciszek.dawid@student.uj.edu.pl">franciszek.dawid@student.uj.edu.pl</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/franciszek-dawid/" target="_blank" rel="noopener noreferrer">/franciszek-dawid</a></p>
+            <p>GitHub: <a href="https://github.com/sh3kda" target="_blank" rel="noopener noreferrer">/sh3kda</a></p>
+        </section>
+        <section class="terminal-command">
+
+            <h2>Aktualizacja indeksów</h2>
+
+            <pre><code>cd ~/public_html/</code></pre>
+            <pre><code>bash scripts/reindex.sh --recursive</code></pre>
+
+            <h2>Aktualizacja lokalna i zdalna</h2>
+
+            <pre><code>cd /Users/sh3kda/Desktop/wierzba &amp;&amp;</code></pre> 
+            <pre><code></code>bash scripts/reindex.sh --recursive &amp;&amp;</code></pre> 
+            <pre><code>bash scripts/deploy.sh --apply &amp;&amp;</code></pre> 
+            <pre> <code>ssh -o StrictHostKeyChecking=yes 25_dawid@wierzba.wzks.uj.edu.pl \ 'cd "$HOME/public_html" && </code></pre>
+            <pre><code>bash scripts/reindex.sh --recursive'</code></pre>
+        </section>
+    </main>
+    <footer>
+        <div>Wierzba WZiKS UJ</div>
+        <div>Ostatnia aktualizacja: <span id="last-modified"></span></div>
+    </footer>
+</body>
+</html>

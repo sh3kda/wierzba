@@ -1,0 +1,24 @@
+.DS_Store
+.vscode/
+.idea/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+*.log
+node_modules/
+.svelte-kit/
+.venv/
+__pycache__/
+.godot/
+
+# Server-only database exercises may contain connection credentials.
+/dh/bazy-danych/*.php
+/dh/bazy-danych/*.txt
+/dh/bd2/*.php
+/dh/bd2/*.txt

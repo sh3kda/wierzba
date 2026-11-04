@@ -1,0 +1,36 @@
+# --- Systemowe ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Frontend (SvelteKit/Vite) ---
+node_modules/
+.svelte-kit/
+build/
+.output/
+.vercel/
+.netlify/
+.wrangler/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Pliki pomocnicze Mavena/Gradle
+.mvn/
+.gradle/
+.lock-bin
+.incremental/
+
+# --- IDE (VS Code / IntelliJ / Eclipse) ---
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+
+
+# --- Logi ---
+*.log
+logs/

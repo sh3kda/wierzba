@@ -1,0 +1,320 @@
+:root {
+    color-scheme: light;
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --muted-color: #666666;
+    --border-color: #cccccc;
+    --link-color: #0044cc;
+    --link-hover: #002266;
+}
+
+body.dark-theme {
+    color-scheme: dark;
+    --bg-color: #121212;
+    --text-color: #dcdcdc;
+    --muted-color: #999999;
+    --border-color: #444444;
+    --link-color: #34d399;
+    --link-hover: #6ee7b7;
+}
+
+body {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    max-width: 840px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--muted-color);
+    overflow-wrap: anywhere;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header > div {
+    min-width: 0;
+}
+
+h1 {
+    font-size: 1.45rem;
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+}
+
+header p {
+    margin: 0;
+    color: var(--muted-color);
+    font-size: 0.92rem;
+}
+
+.profile-name {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.wierzba-logo {
+    color: var(--link-color);
+    font: inherit;
+    line-height: 1.2;
+    white-space: pre;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0 0 25px;
+}
+
+#theme-toggle {
+    display: inline-grid;
+    flex-shrink: 0;
+    min-width: 105px;
+    min-height: 36px;
+    padding: 5px 12px;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-color);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.28s ease 0.1s,
+                color 0.28s ease 0.1s,
+                border-color 0.28s ease 0.1s;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus-visible {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+}
+
+.theme-mode {
+    grid-area: 1 / 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: opacity 0.22s ease-in-out 0.12s;
+}
+
+.mode-sun,
+body.dark-theme .mode-moon {
+    opacity: 1;
+}
+
+.mode-moon,
+body.dark-theme .mode-sun {
+    opacity: 0;
+}
+
+#theme-toggle:hover .mode-sun,
+#theme-toggle:focus-visible .mode-sun,
+body.dark-theme #theme-toggle:hover .mode-moon,
+body.dark-theme #theme-toggle:focus-visible .mode-moon {
+    opacity: 0;
+}
+
+#theme-toggle:hover .mode-moon,
+#theme-toggle:focus-visible .mode-moon,
+body.dark-theme #theme-toggle:hover .mode-sun,
+body.dark-theme #theme-toggle:focus-visible .mode-sun {
+    opacity: 1;
+}
+
+.theme-icon {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.filter-container {
+    margin-bottom: 24px;
+}
+
+.filter-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.filter-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-color);
+    font: inherit;
+    font-size: 0.9rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.wierzba-logo:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 3px;
+}
+
+.dir-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dir-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px 20px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.entry-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.dir-item .entry-name {
+    white-space: pre-wrap;
+}
+
+.is-folder {
+    font-weight: 700;
+}
+
+.file-size {
+    flex-shrink: 0;
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.status-notice,
+.project-tags {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration-thickness: 2px;
+}
+
+section {
+    margin-bottom: 28px;
+}
+
+.terminal-command code {
+    font: inherit;
+}
+
+.terminal-command pre {
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 0 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.project-item {
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.project-heading {
+    display: inline-grid;
+    grid-template-columns: minmax(0, 1fr) 28px;
+    max-width: 100%;
+    align-items: start;
+    column-gap: 0.625rem;
+}
+
+.project-favorite {
+    display: block;
+    width: 28px;
+    height: 28px;
+    color: var(--link-color);
+    fill: currentColor;
+    fill-opacity: 1;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linejoin: round;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 0.88rem;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    color: var(--muted-color);
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #theme-toggle,
+    .theme-mode {
+        transition: none;
+    }
+}

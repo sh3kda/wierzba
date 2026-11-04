@@ -1,0 +1,10 @@
+Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+
+<Files "README.md">
+    ForceType text/plain
+    AddDefaultCharset UTF-8
+</Files>
+
+<FilesMatch "^(\.env($|\.)|\.git($|ignore$|modules$|attributes$|config$))">
+    Require all denied
+</FilesMatch>
