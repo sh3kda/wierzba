@@ -1,19 +1,71 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset = 'utf-8'/>
-		<title>Franciszek Dawid </title>
-		
-	</head>
+    <head>
+        <meta charset='utf-8'/>
+        <title>Franciszek Dawid</title>
+        
+        <style>
+            :root {
+                color-scheme: dark;
+            }
 
-	<body>
-		<form action = "wyszukaj.php">
+            body {
+                background-color: #121212;
+                color: #e0e0e0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                margin: 2rem;
+                line-height: 1.5;
+            }
 
-			Imie: <input name = "imie"> 
-			<br>
-			Nazwisko: <input name = "nazwisko">
-		<br>
-			<input type = "submit" value = "Szukaj">
-		</form>
+            form {
+                background-color: #1e1e1e;
+                padding: 1.5rem;
+                border-radius: 8px;
+                max-width: 320px;
+                border: 1px solid #333333;
+            }
 
-	</body>
+            input[name="imie"],
+            input[name="nazwisko"] {
+                background-color: #2a2a2a;
+                color: #ffffff;
+                border: 1px solid #444444;
+                padding: 0.4rem 0.6rem;
+                border-radius: 4px;
+                outline: none;
+                margin-top: 0.3rem;
+                margin-bottom: 0.8rem;
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            input[name="imie"]:focus,
+            input[name="nazwisko"]:focus {
+                border-color: #4a90e2;
+            }
+
+            input[type="submit"] {
+                background-color: #2e6930;
+                color: #ffffff;
+                border: none;
+                padding: 0.5rem 1.2rem;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 0.4rem;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #3b873e;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action="wyszukaj.php">
+            Imie: <input name="imie"> 
+            Nazwisko: <input name="nazwisko">
+            <input type="submit" value="Szukaj">
+        </form>
+    </body>
 </html>
