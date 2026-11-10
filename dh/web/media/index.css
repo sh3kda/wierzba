@@ -6,6 +6,28 @@
     --border-color: #cccccc;
     --link-color: #0044cc;
     --link-hover: #002266;
+    --table-header-bg: rgba(0, 0, 0, 0.05);
+    --table-zebra-bg: rgba(0, 0, 0, 0.02);
+    --table-hover-bg: rgba(0, 0, 0, 0.04);
+    --highlight-bg: rgba(0, 68, 204, 0.12);
+    --highlight-text: #0044cc;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --bg-color: #121212;
+        --text-color: #dcdcdc;
+        --muted-color: #999999;
+        --border-color: #444444;
+        --link-color: #34d399;
+        --link-hover: #6ee7b7;
+        --table-header-bg: rgba(255, 255, 255, 0.06);
+        --table-zebra-bg: rgba(255, 255, 255, 0.02);
+        --table-hover-bg: rgba(255, 255, 255, 0.05);
+        --highlight-bg: rgba(52, 211, 153, 0.15);
+        --highlight-text: #34d399;
+    }
 }
 
 body.dark-theme {
@@ -16,6 +38,11 @@ body.dark-theme {
     --border-color: #444444;
     --link-color: #34d399;
     --link-hover: #6ee7b7;
+    --table-header-bg: rgba(255, 255, 255, 0.06);
+    --table-zebra-bg: rgba(255, 255, 255, 0.02);
+    --table-hover-bg: rgba(255, 255, 255, 0.05);
+    --highlight-bg: rgba(52, 211, 153, 0.15);
+    --highlight-text: #34d399;
 }
 
 body {
@@ -60,6 +87,19 @@ h1 {
     font-size: 1.45rem;
     margin: 0 0 6px;
     overflow-wrap: anywhere;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 0 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+h3 {
+    font-size: 1.05rem;
+    margin: 28px 0 10px;
+    color: var(--text-color);
 }
 
 header p {
@@ -151,6 +191,107 @@ body.dark-theme #theme-toggle:focus-visible .mode-sun {
     stroke-linejoin: round;
 }
 
+/* --- FORMULARZ I POLA WEJŚCIOWE --- */
+
+form {
+    margin-bottom: 24px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: var(--muted-color);
+}
+
+input[type="text"],
+input[type="number"],
+.filter-container input {
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-color);
+    font: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-color);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+}
+
+/* --- TABELE I WYRÓŻNIENIA --- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 28px;
+    font-size: 0.88rem;
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: middle;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(even),
+tr:nth-child(even) {
+    background-color: var(--table-zebra-bg);
+}
+
+tbody tr:hover,
+tr:hover {
+    background-color: var(--table-hover-bg);
+}
+
+.wyrozniona {
+    background-color: var(--highlight-bg) !important;
+}
+
+.wyrozniona td {
+    color: var(--highlight-text) !important;
+    font-weight: 700;
+    border-top: 1px solid var(--link-color);
+    border-bottom: 1px solid var(--link-color);
+}
+
+/* --- POZOSTAŁE ELEMENTY BAZOWE --- */
+
 .filter-container {
     margin-bottom: 24px;
 }
@@ -158,17 +299,6 @@ body.dark-theme #theme-toggle:focus-visible .mode-sun {
 .filter-container label {
     display: block;
     margin-bottom: 6px;
-    font-size: 0.9rem;
-}
-
-.filter-container input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px 12px;
-    border: 1px solid var(--border-color);
-    background: transparent;
-    color: var(--text-color);
-    font: inherit;
     font-size: 0.9rem;
 }
 
@@ -246,13 +376,6 @@ section {
     border: 1px solid var(--border-color);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-}
-
-h2 {
-    font-size: 1.15rem;
-    margin: 0 0 10px;
-    padding-bottom: 4px;
-    border-bottom: 1px dashed var(--border-color);
 }
 
 .project-item {
