@@ -6,7 +6,9 @@
     --border-color: #cccccc;
     --link-color: #0044cc;
     --link-hover: #002266;
-    --table-header-bg: rgba(0, 0, 0, 0.04);
+    --table-header-bg: rgba(0, 0, 0, 0.05);
+    --table-zebra-bg: rgba(0, 0, 0, 0.02);
+    --table-hover-bg: rgba(0, 0, 0, 0.04);
     --highlight-bg: rgba(0, 68, 204, 0.12);
     --highlight-text: #0044cc;
 }
@@ -20,7 +22,9 @@
         --border-color: #444444;
         --link-color: #34d399;
         --link-hover: #6ee7b7;
-        --table-header-bg: rgba(255, 255, 255, 0.05);
+        --table-header-bg: rgba(255, 255, 255, 0.06);
+        --table-zebra-bg: rgba(255, 255, 255, 0.02);
+        --table-hover-bg: rgba(255, 255, 255, 0.05);
         --highlight-bg: rgba(52, 211, 153, 0.15);
         --highlight-text: #34d399;
     }
@@ -34,7 +38,9 @@ body.dark-theme {
     --border-color: #444444;
     --link-color: #34d399;
     --link-hover: #6ee7b7;
-    --table-header-bg: rgba(255, 255, 255, 0.05);
+    --table-header-bg: rgba(255, 255, 255, 0.06);
+    --table-zebra-bg: rgba(255, 255, 255, 0.02);
+    --table-hover-bg: rgba(255, 255, 255, 0.05);
     --highlight-bg: rgba(52, 211, 153, 0.15);
     --highlight-text: #34d399;
 }
@@ -92,7 +98,7 @@ h2 {
 
 h3 {
     font-size: 1.05rem;
-    margin: 24px 0 8px;
+    margin: 28px 0 10px;
     color: var(--text-color);
 }
 
@@ -240,30 +246,48 @@ input[type="submit"]:focus-visible {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 14px 0 24px;
-    font-size: 0.9rem;
+    margin: 16px 0 28px;
+    font-size: 0.88rem;
+    border: 1px solid var(--border-color);
 }
 
 th, td {
-    border: 1px solid var(--border-color);
-    padding: 8px 12px;
+    padding: 10px 14px;
     text-align: left;
+    vertical-align: middle;
+    border: 1px solid var(--border-color);
 }
 
 th {
     background-color: var(--table-header-bg);
     color: var(--text-color);
     font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(even),
+tr:nth-child(even) {
+    background-color: var(--table-zebra-bg);
+}
+
+tbody tr:hover,
+tr:hover {
+    background-color: var(--table-hover-bg);
 }
 
 .wyrozniona {
     background-color: var(--highlight-bg) !important;
-    color: var(--highlight-text) !important;
-    font-weight: 700;
 }
 
 .wyrozniona td {
-    border-color: var(--link-color);
+    color: var(--highlight-text) !important;
+    font-weight: 700;
+    border-top: 1px solid var(--link-color);
+    border-bottom: 1px solid var(--link-color);
 }
 
 /* --- POZOSTAŁE ELEMENTY BAZOWE --- */
