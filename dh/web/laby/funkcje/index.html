@@ -3,41 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zadanie JS</title>
+    <title>Plac zabaw JavaScript</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        console.log("Uszanowanie dla Państwa");
-        function zmienKolorCzcionki () {
-            document.body.style.color = "black";
-        }
-        function zmienKolorTla () {
-            document.body.style.backgroundColor = "white";
-        }
-        function klikamprzycisk () {
-            alert("Kliknąłeś przycisk");
-        }
-        function zmienNaglowek () {
-            document.title = "Nowy nagłówek";
-        }
-        documentGetElementById("duzy tekst").style.fontSize = "100px";
-
-        function wiekszyTekst () {
-            document.getElementById("duzy tekst").style.fontSize = "110px";
-        }
-
-
-    </script>
+    <script src="index.js" defer></script>
 </head>
 <body>
-    <h1 id="duzy tekst"> duzy tekst</h1>
-    <button onclick="wiekszyTekst()">zwieksz tekst do 110px</button>
-    <p onmouseover="zmienKolorCzcionki ()">Tekst</p>
-    <p onmouseout="zmienKolorTla ()">Tekst2</p>
-    <button onclick="klikamprzycisk ()"> PRZYCISK</button>
-    <br>
-    <button onclick="console.log('Kliknąłeś przycisk 2')"> W konsoli powiadamiamiam o kliknieciu przycisku</button>
-    <br>
-    <button onclick="zmienNaglowek()">Zmien nagłówek</button>
-    <p onmouseover="this.innerHTML=Date ()"> data </p>
+    <main class="playground">
+        <h1 id="duzy-tekst">Plac zabaw JS</h1>
+
+        <section class="panel" data-hint="Sekcja zmiany wygladu: tlo i naglowek.">
+            <h2>Zmiana wygladu</h2>
+            <div class="actions">
+                <button id="btn-zwieksz" type="button">Powieksz naglowek</button>
+                <button id="btn-zmniejsz" type="button">Zmniejsz naglowek</button>
+                <button id="btn-akcent" type="button">Ustaw ciemniejsze tlo</button>
+                <button id="btn-neon" type="button">Wlacz tryb neonowy</button>
+                <button id="btn-przywroc" type="button">Przywroc domyslne tlo</button>
+                <button id="btn-tytul" type="button">Zmien tytul karty przegladarki</button>
+            </div>
+        </section>
+
+        <section class="panel" data-hint="Sekcja akcji: alert, konsola i data.">
+            <h2>Akcje i informacje</h2>
+            <div class="actions">
+                <button id="btn-alert" type="button">Pokaz alert</button>
+                <button id="btn-konsola" type="button">Wyslij komunikat do konsoli</button>
+                <button id="btn-data" type="button">Pokaz dzisiejsza date</button>
+            </div>
+            <p>Dzisiejsza data: <strong id="dzisiejsza-data">--</strong></p>
+        </section>
+
+        <p id="podpowiedz" class="hint">Najedz na sekcje, aby zobaczyc podpowiedz.</p>
+        <p id="status-akcji" class="status">Gotowe do testow.</p>
+    </main>
 </body>
 </html>

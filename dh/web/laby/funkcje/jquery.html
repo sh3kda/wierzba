@@ -6,36 +6,70 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0;
+            padding: 1.5rem;
+            font-family: Arial, sans-serif;
+            background: #0f1117;
+            color: #ffffff;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        body.neon {
+            background: #020202;
+            color: #77ff88;
+        }
+
         #naglowek1 {
             padding: 10px;
+            border-radius: 8px;
         }
+
         #akapit1 {
             padding: 10px;
+            border-radius: 8px;
+            background: #1a2334;
+            display: inline-block;
+            cursor: pointer;
         }
     </style>
 
     <script>
+        function formatujDateDzienMiesiacRok(data) {
+            const dzien = String(data.getDate()).padStart(2, '0');
+            const miesiac = String(data.getMonth() + 1).padStart(2, '0');
+            const rok = String(data.getFullYear());
+            return `${dzien}-${miesiac}-${rok}`;
+        }
+
         $(document).ready(function () {
             $('#naglowek1')
-                .css({ background: 'yellow' })
-                .delay(1500)                                
+                .css({ background: '#314666' })
+                .delay(1500)
                 .fadeOut(1500) 
-                .fadeIn(1500);             
+                .fadeIn(1500);
 
             $('p#akapit1').click(function () {
-                $(this).css({ background: 'red' });
+                $('body').addClass('neon');
+                $(this).css({ background: '#0a0a0a', border: '1px solid #2eff55' });
             });
 
+            $('#dzisiejsza-data').text(formatujDateDzienMiesiacRok(new Date()));
         });
     </script>
 </head>
 <body>
 
-    <h1 id="naglowek1">Naglowek nr 1</h1>
+    <h1 id="naglowek1">Animacja naglowka po zaladowaniu strony</h1>
 
     <hr>
 
-    <p id="akapit1">Zmien kolor tla</p>
+    <p id="akapit1">Kliknij, aby wlaczyc czarne tlo i neonowy tekst</p>
+    <p>Dzisiejsza data (dd-mm-rrrr): <strong id="dzisiejsza-data">--</strong></p>
 
 </body>
 </html>

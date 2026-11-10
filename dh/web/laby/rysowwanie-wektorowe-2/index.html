@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rysuje kolko w kwadracie</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            background: #0f1117;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <svg width ="400" height="400">
+    <svg width="400" height="400">
         <rect width="400" height="400" fill="blue" stroke="black"/>
         <circle cx="300" cy="300" r="100" fill="red" stroke="black"/>
     </svg>  
