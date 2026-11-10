@@ -17,8 +17,7 @@ node_modules/
 __pycache__/
 .godot/
 
-# Server-only database exercises may contain connection credentials.
-/dh/bazy-danych/*.php
+# przed wypchnieciem danych poufnych
+/dh/bazy-danych/**/autoryzacja.php
 /dh/bazy-danych/*.txt
-/dh/bd2/*.php
 /dh/bd2/*.txt

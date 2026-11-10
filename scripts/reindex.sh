@@ -233,6 +233,7 @@ render_entries() {
         [[ -f "$entry" && ! -L "$entry" ]] || continue
         name="${entry##*/}"
         [[ "$name" != index.html ]] || continue
+        [[ "$entry" != "$PROJECT_ROOT"/dh/bazy-danych/*/autoryzacja.php && "$entry" != "$PROJECT_ROOT/dh/bazy-danych/autoryzacja.php" ]] || continue
         bytes="$(file_size "$entry")"
         size_label="$(format_size "$bytes")"
         printf '            <li class="dir-item" data-entry><a class="entry-name" href="./%s">%s</a><span class="file-size" data-bytes="%s" title="%s B">%s</span></li>\n' \
