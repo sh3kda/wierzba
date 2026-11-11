@@ -39,6 +39,14 @@ if [[ "$local_head" != "$remote_head" ]]; then
 fi
 
 bash "$SCRIPT_DIR/reindex.sh" --recursive
+
+# Remove stale local coursework files from the public site before staging.
+for dir in "$PROJECT_ROOT/dh/bazy-danych" "$PROJECT_ROOT/dh/bd2"; do
+    if [[ -d "$dir" ]]; then
+        find "$dir" -type f \( -name '*.php' -o -name '*.txt' \) -delete
+    fi
+done
+
 repo_git add -A -- .
 
 while IFS= read -r -d '' file; do

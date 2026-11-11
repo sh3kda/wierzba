@@ -26,3 +26,7 @@ P *
 - *.key
 - *.p12
 - *.pfx
+# Keep local DB coursework files out of the public deployment.
+- /dh/bazy-danych/*.php
+- /dh/bazy-danych/**/*.php
+- /dh/bazy-danych/.password.php
