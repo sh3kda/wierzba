@@ -19,5 +19,7 @@ __pycache__/
 
 # przed wypchnieciem danych poufnych
 /dh/bazy-danych/**/autoryzacja.php
+/dh/bazy-danych/*.php
+/dh/bazy-danych/**/*.php
 /dh/bazy-danych/*.txt
 /dh/bd2/*.txt
