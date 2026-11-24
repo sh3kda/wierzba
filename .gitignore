@@ -17,9 +17,7 @@ node_modules/
 __pycache__/
 .godot/
 
-# przed wypchnieciem danych poufnych
-/dh/bazy-danych/**/autoryzacja.php
-/dh/bazy-danych/*.php
-/dh/bazy-danych/**/*.php
-/dh/bazy-danych/*.txt
+# Server-only database exercises stay on the website, not in GitHub.
+/dh/bazy-danych/
+/dh/bd2/*.php
 /dh/bd2/*.txt

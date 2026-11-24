@@ -24,29 +24,11 @@ flock -w 120 9 || die "Inna publikacja lub synchronizacja nadal trwa."
 [[ "$(repo_git symbolic-ref --short HEAD)" == main ]] || die "Wymagana galaz main."
 
 repo_git fetch --no-tags origin refs/heads/main:refs/remotes/origin/main
-
-local_head="$(repo_git rev-parse HEAD)"
-remote_head="$(repo_git rev-parse refs/remotes/origin/main)"
-if [[ "$local_head" != "$remote_head" ]]; then
-    if repo_git merge-base --is-ancestor "$local_head" "$remote_head"; then
-        # Remote moved forward without history rewrite; fast-forward local main ref.
-        repo_git update-ref refs/heads/main "$remote_head"
-    elif repo_git merge-base --is-ancestor "$remote_head" "$local_head"; then
-        :
-    else
-        die "GitHub ma obce zmiany. Uzgodnij historie recznie; nie wykonano force-push."
-    fi
-fi
+repo_git merge-base --is-ancestor refs/remotes/origin/main HEAD ||
+    die "GitHub ma obce zmiany. Uzgodnij historie recznie; nie wykonano force-push."
 
 bash "$SCRIPT_DIR/reindex.sh" --recursive
-
-# Remove stale local coursework files from the public site before staging.
-for dir in "$PROJECT_ROOT/dh/bazy-danych" "$PROJECT_ROOT/dh/bd2"; do
-    if [[ -d "$dir" ]]; then
-        find "$dir" -type f \( -name '*.php' -o -name '*.txt' \) -delete
-    fi
-done
-
+repo_git rm -r --cached --ignore-unmatch -- dh/bazy-danych
 repo_git add -A -- .
 
 while IFS= read -r -d '' file; do
